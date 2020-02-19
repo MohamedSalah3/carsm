@@ -19,7 +19,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00000bdd  00000000  00000000  000064c4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000b1b  00000000  00000000  000070a1  2**0
+  8 .debug_line   00000b19  00000000  00000000  000070a1  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000c58  00000000  00000000  00007bbc  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -118,10 +118,6 @@ Us_GetDistance(&Distance);
       a0:	83 ea       	ldi	r24, 0xA3	; 163
       a2:	90 e0       	ldi	r25, 0x00	; 0
       a4:	0e 94 19 0c 	call	0x1832	; 0x1832 <Us_GetDistance>
-// }else if(Distance > 40) 
-// {
-// 	Steering_SteerCar(CAR_FORWARD,20);
-// }	
 
 if(Distance <= 30)
       a8:	80 91 a3 00 	lds	r24, 0x00A3
