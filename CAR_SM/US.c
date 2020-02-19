@@ -6,6 +6,7 @@
  */ 
 #include "Us.h"
 #include "UsConfig.h"
+
 /****************************************************************************************************
  * Function Name   : Us_Init.                                                                       *
  * Input Parameters : None.                                                                         *                                                                   *                                                                                                *
@@ -27,7 +28,10 @@ return Ret;
 }
 ERROR_STATUS Us_Trigger(void)
 {uint8_t Ret=0;
-Ret=DIO_Write(GPIOC,BIT4,HIGH);	
+Ret=DIO_Write(GPIOC,BIT4,HIGH);
+timer2Start();
+timer2DelayMs(1);
+Ret=DIO_Write(GPIOC,BIT4,LOW);
 return Ret;	
 }
 
@@ -36,7 +40,7 @@ ERROR_STATUS Us_GetDistance(uint16_t *Distance)
 {uint8_t Ret=0;
 	uint32_t u32l_Time;
 	Ret=Icu_ReadTime(ICU_CH2,ICU_RISE_TO_FALL,&u32l_Time);
-	*Distance=u32l_Time/58;
+	*Distance=u32l_Time;
 	return Ret;
 }
 

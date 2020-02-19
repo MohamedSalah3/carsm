@@ -47,6 +47,8 @@ C_SRCS +=  \
 ../PWM.c \
 ../PWM_Config.c \
 ../Steering.c \
+../timer.c \
+../Timer_Config.c \
 ../US.c \
 ../UsConfig.c
 
@@ -70,6 +72,8 @@ Motor_Config.o \
 PWM.o \
 PWM_Config.o \
 Steering.o \
+timer.o \
+Timer_Config.o \
 US.o \
 UsConfig.o
 
@@ -87,6 +91,8 @@ Motor_Config.o \
 PWM.o \
 PWM_Config.o \
 Steering.o \
+timer.o \
+Timer_Config.o \
 US.o \
 UsConfig.o
 
@@ -104,6 +110,8 @@ Motor_Config.d \
 PWM.d \
 PWM_Config.d \
 Steering.d \
+timer.d \
+Timer_Config.d \
 US.d \
 UsConfig.d
 
@@ -121,6 +129,8 @@ Motor_Config.d \
 PWM.d \
 PWM_Config.d \
 Steering.d \
+timer.d \
+Timer_Config.d \
 US.d \
 UsConfig.d
 
@@ -134,6 +144,10 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

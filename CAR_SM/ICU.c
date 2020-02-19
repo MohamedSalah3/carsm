@@ -44,7 +44,7 @@ switch(Icu_Cfg->ICU_Ch_Timer)
 {
 	case ICU_TIMER_CH0:
 		//Enable Timer0
-		TCCR0=0x03;
+		TCCR0=0x05;
 		TIMSK=0x01;
 		break;
 	case ICU_TIMER_CH1:
@@ -120,12 +120,11 @@ switch(Icu_EdgeToEdge)
 	Ret=E_NOK;
 	break;
 }
-*Icu_Time=*Icu_Time * 4;
+
 return Ret;
 }
-
 void EXTI(void)
-{	u32_sgv_TimerVal=TCNT0+u8_ovf_happend*255;
+{	u32_sgv_TimerVal=(uint32_t)TCNT0+((uint32_t)u8_ovf_happend*255);
 	u8_ovf_happend=0;
 		if(READBIT(MCUCSR,6))
 		{
@@ -142,7 +141,7 @@ void EXTI(void)
 			/********************************/
 			}	
 
-
+//UDR=Timer_High;
 }
 void timer_interrupt(void)
 {

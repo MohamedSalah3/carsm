@@ -7,7 +7,7 @@
 
 
 #include "car_sm.h"
-uint32_t Distance=0;
+uint16_t Distance=0;
 int main(void)
 {
  Car_SM_Init();
