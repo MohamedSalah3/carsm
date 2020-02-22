@@ -130,9 +130,14 @@ do{
   printf("Enter TCNT0 Value when rising edge\n");
   scanf("%d",&TCNT0);
   EXTI();
+if(READBIT(MCUCSR,6)){printf("switching from rise to fall failed\n");}
+  else{printf("switching from rising to fall edge passed");}
+
   printf("Enter TCNT0 Value when failing edge\n");
   scanf("%d",&TCNT0);
   EXTI();
+  if(READBIT(MCUCSR,6)){printf("switching from Failling Edge to Rising Edge Passed\n");}
+    else{printf("switching from Failling to Rising edge failed");}
 /*********************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data0);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
