@@ -1,6 +1,7 @@
 #include "ICU.h"
 #include <stdio.h>
 #include <stdlib.h>
+uint32_t data=0;
 int main(int argc, char const *argv[]) {
 uint8_t Ret=E_OK;
 uint8_t virtualWhileone='y';
@@ -121,18 +122,22 @@ printf("Test scenario Three failed\n");
 
 printf("Testing ERROR_STATUS Icu_ReadTime(uint8_t Icu_Channel, uint8_t Icu_EdgeToEdge, uint32_t * Icu_Time) function\n");
 /*************************************************************************************************************************/
-/*first we test what happen in interrupt and the data returned by Icu_ReadTime if valid it will passes the test cases */
+/*first we test what happen in interrupt and the data returned by
+Icu_ReadTime if valid it will passes the test cases */
 /*************************************************************************************************************************/
 
 do{
-  printf("Enter TCNT0 Value\n");
+  printf("Enter TCNT0 Value when rising edge\n");
   scanf("%#X\n",&TCNT0);
-  printf("Enter y if u wanna continue\n");
-  scanf("%c\n",virtualWhileone);
+  EXTI();
+  printf("Enter TCNT0 Value when failing edge\n");
+  scanf("%#X\n",&TCNT0);
   printf("Enter Is ovf happend Enter 1 if yes\n");
   scanf("%d\n",u8_ovf_happendovf);
-EXTI();
-
+  EXTI();
+  Ret=Icu_ReadTime(ICU_CH2,ICU_RISE_TO_FALL, &data);
+  printf("Enter y if u wanna continue\n");
+  scanf("%c\n",virtualWhileone);
 }while(virtualWhileone == 'y');
 
   return 0;
