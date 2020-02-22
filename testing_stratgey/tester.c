@@ -132,10 +132,8 @@ do{
   EXTI();
   printf("Enter TCNT0 Value when failing edge\n");
   scanf("%#X\n",&TCNT0);
-  printf("Enter Is ovf happend Enter 1 if yes\n");
-  scanf("%d\n",u8_ovf_happendovf);
   EXTI();
-  Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data);
+Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
 printf("TCCR0=%#X\n",TCCR0);
 Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_RISE_TO_FALL, &data);
