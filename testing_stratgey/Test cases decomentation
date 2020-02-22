@@ -1,0 +1,14 @@
+ERROR_STATUS Icu_Init(Icu_cfg_s * Icu_Cfg)
+test cases
+1: Valid arguments to ICU_Init
+
+in this scenario we will see the value of registers
+is equal to the value needed to the configurations
+
+2:when using valid arguments?
+in this scenario....we will see when we enter
+valid arguments will it pass or not
+
+3:Entering a non valid arguments?
+in this scenario....we will see when we enter
+non valid arguments will it protect it self or not
