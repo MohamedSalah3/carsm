@@ -128,10 +128,10 @@ Icu_ReadTime if valid it will passes the test cases */
 
 do{
   printf("Enter TCNT0 Value when rising edge\n");
-  scanf("%#X\n",&TCNT0);
+  scanf("%d",&TCNT0);
   EXTI();
   printf("Enter TCNT0 Value when failing edge\n");
-  scanf("%#X\n",&TCNT0);
+  scanf("%d",&TCNT0);
   EXTI();
 Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
@@ -142,8 +142,11 @@ printf("TCCR1=%#X\n",TCCR1);
 Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
 printf("TCCR2=%#X\n",TCCR2);
+printf("data=%d\n",data);
 printf("Enter y if u wanna continue\n");
-scanf("%c\n",virtualWhileone);
+fflush(stdout);
+fflush(stdin);
+scanf("%c",&virtualWhileone);
 }while(virtualWhileone == 'y');
 
   return 0;
