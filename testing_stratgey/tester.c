@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main(int argc, char const *argv[]) {
+uint8_t Ret=E_OK;
+uint8_t virtualWhileone='y';
 Icu_Init(&ICU_Configuration);
 printf("************************\n");
 printf("*Case ICU_CH2,ICU_TIMER_CH0 *");
@@ -117,9 +119,21 @@ printf("MCUCR%#X\n",MCUCR);
 
 printf("Test scenario Three failed\n");
 
+printf("Testing ERROR_STATUS Icu_ReadTime(uint8_t Icu_Channel, uint8_t Icu_EdgeToEdge, uint32_t * Icu_Time) function\n");
+/*************************************************************************************************************************/
+/*first we test what happen in interrupt and the data returned by Icu_ReadTime if valid it will passes the test cases */
+/*************************************************************************************************************************/
 
+do{
+  printf("Enter TCNT0 Value\n");
+  scanf("%#X\n",&TCNT0);
+  printf("Enter y if u wanna continue\n");
+  scanf("%c\n",virtualWhileone);
+  printf("Enter Is ovf happend Enter 1 if yes\n");
+  scanf("%d\n",u8_ovf_happendovf);
+EXTI();
 
-
+}while(virtualWhileone == 'y');
 
   return 0;
 }
