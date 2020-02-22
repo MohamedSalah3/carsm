@@ -12,3 +12,10 @@ valid arguments will it pass or not
 3:Entering a non valid arguments?
 in this scenario....we will see when we enter
 non valid arguments will it protect it self or not
+
+
+4:Testing ERROR_STATUS Icu_ReadTime(uint8_t Icu_Channel, uint8_t Icu_EdgeToEdge, uint32_t * Icu_Time) function
+ to test this function we need to execute ISR with it
+ Note that this wont happen unless u deal with it inter actively
+
+ 5: Timer 1 and Timer2 are not working in my design with ICU and i only used EX_interrupt_Two
