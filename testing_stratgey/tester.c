@@ -135,8 +135,15 @@ do{
   printf("Enter Is ovf happend Enter 1 if yes\n");
   scanf("%d\n",u8_ovf_happendovf);
   EXTI();
-  Ret=Icu_ReadTime(ICU_CH2,ICU_RISE_TO_FALL, &data);
+  Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR0);
+Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_RISE_TO_FALL, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR1=%#X\n",TCCR1);
+Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_RISE_TO_FALL, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR2=%#X\n",TCCR2);
 printf("Enter y if u wanna continue\n");
 scanf("%c\n",virtualWhileone);
 }while(virtualWhileone == 'y');
