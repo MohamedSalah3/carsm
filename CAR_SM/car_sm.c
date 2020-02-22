@@ -24,10 +24,10 @@ Us_GetDistance(&Distance);
 if(Distance <= 30)
 {
 	
-	Steering_SteerCar(CAR_RIGHT,50);
+	Steering_SteerCar(CAR_RIGHT,30);
 }else
 {
-	Steering_SteerCar(CAR_FORWARD,50);
+	Steering_SteerCar(CAR_FORWARD,30);
 }
 }	
 
