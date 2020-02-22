@@ -136,8 +136,9 @@ do{
   scanf("%d\n",u8_ovf_happendovf);
   EXTI();
   Ret=Icu_ReadTime(ICU_CH2,ICU_RISE_TO_FALL, &data);
-  printf("Enter y if u wanna continue\n");
-  scanf("%c\n",virtualWhileone);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("Enter y if u wanna continue\n");
+scanf("%c\n",virtualWhileone);
 }while(virtualWhileone == 'y');
 
   return 0;
