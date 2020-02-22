@@ -159,12 +159,12 @@ printf("data at ICU_RISE_TO_RISE , Timer0=%d\n",data);
 
 Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_RISE_TO_RISE, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
-printf("TCCR0=%#X\n",TCCR1);
+printf("TCCR1=%#X\n",TCCR1);
 printf("data at ICU_RISE_TO_RISE , Timer1=%d\n",data);
 /********************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_RISE_TO_RISE, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
-printf("TCCR0=%#X\n",TCCR2);
+printf("TCCR2=%#X\n",TCCR2);
 printf("data at ICU_RISE_TO_RISE , Timer2=%d\n",data);
 /********************************************************/
                  /*ICU_FALE_TO_RISE*/
@@ -177,12 +177,12 @@ printf("data at ICU_FALE_TO_RISE , Timer0=%d\n",data);
 
 Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_FALE_TO_RISE, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
-printf("TCCR0=%#X\n",TCCR1);
+printf("TCCR1=%#X\n",TCCR1);
 printf("data at ICU_FALE_TO_RISE , Timer1=%d\n",data);
 /********************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_FALE_TO_RISE, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
-printf("TCCR0=%#X\n",TCCR2);
+printf("TCCR2=%#X\n",TCCR2);
 printf("data at ICU_FALE_TO_RISE , Timer2=%d\n",data);
 /************************************************************************/
 printf("Enter y if u wanna continue\n");
@@ -190,6 +190,7 @@ fflush(stdout);
 fflush(stdin);
 scanf("%c",&virtualWhileone);
 }while(virtualWhileone == 'y');
+printf("Case Using Timer1 or timer2 failed cause of hardware constrains\n");
 
   return 0;
 }
