@@ -133,16 +133,58 @@ do{
   printf("Enter TCNT0 Value when failing edge\n");
   scanf("%d",&TCNT0);
   EXTI();
+/*********************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
 printf("TCCR0=%#X\n",TCCR0);
+printf("data at ICU_RISE_TO_FALL , Timer0=%d\n",data);
+/********************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
 printf("TCCR1=%#X\n",TCCR1);
+printf("data at ICU_RISE_TO_FALL , Timer1=%d\n",data);
+/*******************************************************/
 Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_RISE_TO_FALL, &data);
 if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
 printf("TCCR2=%#X\n",TCCR2);
-printf("data=%d\n",data);
+printf("data at ICU_RISE_TO_FALL , Timer2=%d\n",data);
+/*******************************************************/
+/*             ICU_RISE_TO_RISE                        */
+/*********************************************************/
+Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_RISE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR0);
+printf("data at ICU_RISE_TO_RISE , Timer0=%d\n",data);
+/********************************************************/
+
+Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_RISE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR1);
+printf("data at ICU_RISE_TO_RISE , Timer1=%d\n",data);
+/********************************************************/
+Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_RISE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR2);
+printf("data at ICU_RISE_TO_RISE , Timer2=%d\n",data);
+/********************************************************/
+                 /*ICU_FALE_TO_RISE*/
+/*********************************************************/
+Ret=Icu_ReadTime(ICU_TIMER_CH0,ICU_FALE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR0);
+printf("data at ICU_FALE_TO_RISE , Timer0=%d\n",data);
+/********************************************************/
+
+Ret=Icu_ReadTime(ICU_TIMER_CH1,ICU_FALE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR1);
+printf("data at ICU_FALE_TO_RISE , Timer1=%d\n",data);
+/********************************************************/
+Ret=Icu_ReadTime(ICU_TIMER_CH2,ICU_FALE_TO_RISE, &data);
+if(Ret==E_OK){printf("PASSED ERROR_STATUS\n");}
+printf("TCCR0=%#X\n",TCCR2);
+printf("data at ICU_FALE_TO_RISE , Timer2=%d\n",data);
+/************************************************************************/
 printf("Enter y if u wanna continue\n");
 fflush(stdout);
 fflush(stdin);
