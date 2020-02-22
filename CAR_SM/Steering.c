@@ -42,9 +42,9 @@ ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
 			ret= Motor_Direction(MOTOR_1, CAR_BACKWARD);
 			ret= Motor_Direction(MOTOR_2, CAR_FORWARD);
 			ret=Motor_Start(MOTOR_1|MOTOR_2,speed);
-			timer2Start();
-			timer2DelayMs(10);
-/***********************************************************/
+		/*	timer2Start();
+			timer2DelayMs(100);
+*//***********************************************************/
 			ret= Motor_Direction(MOTOR_1, CAR_STOP);
 			ret= Motor_Direction(MOTOR_2, CAR_STOP);
 			break;
